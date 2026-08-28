@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COPEL — Central de Sistemas e Ferramentas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --copel-orange: #FF6B00;
+            --copel-orange-dark: #E05D00;
+            --copel-orange-light: #FFF0E6;
+            --bg-gray: #F4F6F8;
+            --card-bg: #FFFFFF;
+            --text-main: #2C3E50;
+            --text-muted: #6C7A89;
+            --border-color: #E2E8F0;
+            --badge-bg: rgba(255, 255, 255, 0.2);
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.04);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --shadow-hover: 0 8px 24px rgba(255, 107, 0, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-gray);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Top Header Navigation */
+        header {
+            background-color: var(--copel-orange);
+            color: white;
+            padding: 0 2rem;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .header-logo {
+            height: 38px;
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .header-divider {
+            width: 1px;
+            height: 24px;
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .header-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        .header-badge {
+            background: var(--badge-bg);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Main Container */
+        main {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem;
+            width: 100%;
+            flex: 1;
+        }
+
+        .welcome-section {
+            margin-bottom: 2rem;
+        }
+
+        .welcome-section h1 {
+            font-size: 1.75rem;
+            color: #1A252C;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .welcome-section p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Search & Filter Bar */
+        .search-container {
+            margin-bottom: 2.5rem;
+            position: relative;
+            max-width: 500px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 12px 16px 12px 42px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            background-color: white;
+            transition: all 0.2s;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--copel-orange);
+            box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.15);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* Section Styling */
+        .category-group {
+            margin-bottom: 2.5rem;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .category-accent {
+            width: 4px;
+            height: 20px;
+            background-color: var(--copel-orange);
+            border-radius: 2px;
+        }
+
+        .category-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #1E293B;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Applications Grid */
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .app-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.25s ease;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .app-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            transition: background 0.25s;
+        }
+
+        .app-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+            border-color: rgba(255, 107, 0, 0.3);
+        }
+
+        .app-card:hover::before {
+            background: var(--copel-orange);
+        }
+
+        .app-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+        }
+
+        .app-tag {
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 4px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tag-pilot {
+            background-color: #E0F2FE;
+            color: #0369A1;
+        }
+
+        .tag-official {
+            background-color: #FEF3C7;
+            color: #B45309;
+        }
+
+        .app-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #0F172A;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .app-desc {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+        }
+
+        .app-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            pt: 1rem;
+            border-top: 1px solid #F1F5F9;
+        }
+
+        .app-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--copel-orange);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+
+        .app-link:hover {
+            background-color: var(--copel-orange-dark);
+        }
+
+        .app-url {
+            font-size: 0.75rem;
+            color: #94A3B8;
+            font-family: monospace;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 180px;
+        }
+
+        /* External Link Icon */
+        .icon-arrow {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
+        }
+
+        /* Footer */
+        footer {
+            background-color: white;
+            border-top: 1px solid var(--border-color);
+            padding: 1.5rem 2rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: auto;
+        }
+
+        @media (max-width: 640px) {
+            header {
+                padding: 0 1rem;
+            }
+            .header-badge {
+                display: none;
+            }
+            main {
+                padding: 1.5rem 1rem;
+            }
+            .app-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar estilo COPEL -->
+    <header>
+        <div class="header-brand">
+            <img src="./logo.png" alt="COPEL" class="header-logo">
+            <div class="header-divider"></div>
+            <div class="header-title">Central de Aplicações & Ferramentas</div>
+        </div>
+        <div class="header-badge">Análise de Projetos da Medição</div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <div class="welcome-section">
+            <h1>Painel de Acesso Rápido</h1>
+            <p>Selecione a ferramenta ou gerador de parecer técnico que deseja utilizar.</p>
+        </div>
+
+        <!-- Campo de Busca Rápida -->
+        <div class="search-container">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="searchInput" class="search-input" placeholder="Buscar ferramenta, norma ou gerador..." onkeyup="filterApps()">
+        </div>
+
+        <!-- Categoria 1: Sistemas da Análise de Projetos -->
+        <div class="category-group">
+            <div class="category-header">
+                <div class="category-accent"></div>
+                <h2 class="category-title">Sistemas da Análise de Projetos</h2>
+            </div>
+            <div class="app-grid" id="pilotGrid">
+
+                <!-- Queda de Tensão -->
+                <div class="app-card" data-keywords="queda tensão memorial cálculo dimensionamento condutores vercel">
+                    <div>
+                        <div class="app-header">
+                            <span class="app-tag tag-pilot">Ferramenta Técnica</span>
+                        </div>
+                        <h3 class="app-title">Cálculo de Queda de Tensão</h3>
+                        <p class="app-desc">Cálculo de queda de tensão por trecho e memorial de cálculo completo para barramentos e cabos.</p>
+                    </div>
+                    <div class="app-footer">
+                        <span class="app-url">quedadetensao.vercel.app</span>
+                        <a href="https://quedadetensao.vercel.app" target="_blank" class="app-link">
+                            Acessar
+                            <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Parecer I20 -->
+                <div class="app-card" data-keywords="i20 parecer final aprovação ss120 vercel">
+                    <div>
+                        <div class="app-header">
+                            <span class="app-tag tag-pilot">Gerador Técnico</span>
+                        </div>
+                        <h3 class="app-title">Gerador de Parecer Final I20</h3>
+                        <p class="app-desc">Emissão rápida de pareceres técnicos finais para aprovação e troca de padrão da SS I20.</p>
+                    </div>
+                    <div class="app-footer">
+                        <span class="app-url">i20copel.vercel.app</span>
+                        <a href="https://i20copel.vercel.app" target="_blank" class="app-link">
+                            Acessar
+                            <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Impedâncias -->
+                <div class="app-card" data-keywords="impedancias parecer indeferimento reprovação protocolo vercel">
+                    <div>
+                        <div class="app-header">
+                            <span class="app-tag tag-pilot">Gerador Técnico</span>
+                        </div>
+                        <h3 class="app-title">Gerador de Parecer — Impedâncias</h3>
+                        <p class="app-desc">Análise de status do protocolo e geração automatizada de motivos de indeferimento técnico.</p>
+                    </div>
+                    <div class="app-footer">
+                        <span class="app-url">impedancias.vercel.app</span>
+                        <a href="https://impedancias.vercel.app" target="_blank" class="app-link">
+                            Acessar
+                            <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Demanda Projetos -->
+                <div class="app-card" data-keywords="demanda projetos calculo carga estimativa projetistas vercel">
+                    <div>
+                        <div class="app-header">
+                            <span class="app-tag tag-pilot">Ferramenta Técnica</span>
+                        </div>
+                        <h3 class="app-title">Calculadora de Demanda (Projetistas)</h3>
+                        <p class="app-desc">Ferramenta para Projetistas fazerem cálculo e estimativa da demanda de energia elétrica em novos projetos.</p>
+                    </div>
+                    <div class="app-footer">
+                        <span class="app-url">demandaprojetos.vercel.app</span>
+                        <a href="https://demandaprojetos.vercel.app" target="_blank" class="app-link">
+                            Acessar
+                            <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Categoria 2: Links e Normas Oficiais COPEL -->
+        <div class="category-group">
+            <div class="category-header">
+                <div class="category-accent"></div>
+                <h2 class="category-title">Recursos e Sistemas Oficiais</h2>
+            </div>
+            <div class="app-grid" id="officialGrid">
+
+                <!-- Normas Copel -->
+                <div class="app-card" data-keywords="normas ntc padroes tecnicos copel">
+                    <div>
+                        <div class="app-header">
+                            <span class="app-tag tag-official">Oficial COPEL</span>
+                        </div>
+                        <h3 class="app-title">Normas Técnicas (NTC)</h3>
+                        <p class="app-desc">Acesso direto ao acervo de normas e especificações técnicas de fornecimento e medição.</p>
+                    </div>
+                    <div class="app-footer">
+                        <span class="app-url">copel.com/normas</span>
+                        <a href="https://www.copel.com/normas" target="_blank" class="app-link">
+                            Acessar
+                            <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Formulários Copel -->
+                <div class="app-card" data-keywords="formularios documentos requerimentos copel">
+                    <div>
+                        <div class="app-header">
+                            <span class="app-tag tag-official">Oficial COPEL</span>
+                        </div>
+                        <h3 class="app-title">Formulários e Documentos</h3>
+                        <p class="app-desc">Repositório corporativo de formulários padrão para análise e entrada de solicitações.</p>
+                    </div>
+                    <div class="app-footer">
+                        <span class="app-url">copel.com/formularios</span>
+                        <a href="https://www.copel.com/formularios" target="_blank" class="app-link">
+                            Acessar
+                            <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Sistema PEW Web -->
+                <div class="app-card" data-keywords="pew web projetos sistema consulta copel">
+                    <div>
+                        <div class="app-header">
+                            <span class="app-tag tag-official">Oficial COPEL</span>
+                        </div>
+                        <h3 class="app-title">Sistema PEW Web</h3>
+                        <p class="app-desc">Plataforma interna para acompanhamento, consulta e tramitação de projetos de entrada de energia.</p>
+                    </div>
+                    <div class="app-footer">
+                        <span class="app-url">copel.com/pewweb</span>
+                        <a href="https://www.copel.com/pewweb" target="_blank" class="app-link">
+                            Acessar
+                            <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>COPEL — Análise de Projetos da Medição | Central Interna de Ferramentas</p>
+    </footer>
+
+    <!-- Script de Busca Simplificado -->
+    <script>
+        function filterApps() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.app-card');
+
+            cards.forEach(card => {
+                const keywords = card.getAttribute('data-keywords') || '';
+                const title = card.querySelector('.app-title').textContent.toLowerCase();
+                const desc = card.querySelector('.app-desc').textContent.toLowerCase();
+
+                if (title.includes(input) || desc.includes(input) || keywords.includes(input)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
