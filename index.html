@@ -240,7 +240,7 @@
             letter-spacing: 0.4px;
         }
 
-        .tag-pilot {
+        .tag-internal {
             background-color: #E0F2FE;
             color: #0369A1;
         }
@@ -248,6 +248,11 @@
         .tag-official {
             background-color: #FEF3C7;
             color: #B45309;
+        }
+
+        .tag-external {
+            background-color: #DCFCE7;
+            color: #15803D;
         }
 
         .app-title {
@@ -301,7 +306,6 @@
             max-width: 150px;
         }
 
-        /* External Link Icon */
         .icon-arrow {
             width: 12px;
             height: 12px;
@@ -357,11 +361,11 @@
 
     <!-- Conteúdo Principal -->
     <main>
-        <!-- Barra Superior Unificada (Título + Busca alinhada à direita) -->
+        <!-- Barra Superior Unificada (Título + Busca) -->
         <div class="top-action-bar">
             <div class="welcome-section">
                 <h1>Painel de Acesso Rápido</h1>
-                <p>Selecione a ferramenta ou gerador de parecer técnico que deseja utilizar.</p>
+                <p>Selecione a ferramenta, gerador de parecer ou recurso oficial que deseja utilizar.</p>
             </div>
             <div class="search-container">
                 <span class="search-icon">🔍</span>
@@ -369,55 +373,19 @@
             </div>
         </div>
 
-        <!-- Categoria 1: Sistemas da Análise de Projetos -->
+        <!-- Categoria 1: Sistemas da Análise de Projetos (Uso Interno) -->
         <div class="category-group">
             <div class="category-header">
                 <div class="category-accent"></div>
                 <h2 class="category-title">Sistemas da Análise de Projetos</h2>
             </div>
-            <div class="app-grid" id="pilotGrid">
-
-                <!-- Queda de Tensão -->
-                <div class="app-card" data-keywords="queda tensão memorial cálculo dimensionamento condutores vercel">
-                    <div>
-                        <div class="app-header">
-                            <span class="app-tag tag-pilot">Ferramenta Técnica</span>
-                        </div>
-                        <h3 class="app-title">Cálculo de Queda de Tensão</h3>
-                        <p class="app-desc">Cálculo de queda de tensão por trecho e memorial de cálculo completo para barramentos e cabos.</p>
-                    </div>
-                    <div class="app-footer">
-                        <span class="app-url">quedadetensao.vercel.app</span>
-                        <a href="https://quedadetensao.vercel.app" target="_blank" class="app-link">
-                            Acessar
-                            <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Detalhamento de Carga Instalada (DCI) -->
-                <div class="app-card" data-keywords="dci detalhamento carga instalada ficha motores potencia equipamentos vercel">
-                    <div>
-                        <div class="app-header">
-                            <span class="app-tag tag-pilot">Ferramenta Técnica</span>
-                        </div>
-                        <h3 class="app-title">Detalhamento de Carga Instalada (DCI)</h3>
-                        <p class="app-desc">Preenchimento do formulário de DCI e ficha técnica de características para motores acima de 75 CV.</p>
-                    </div>
-                    <div class="app-footer">
-                        <span class="app-url">dci-copel.vercel.app</span>
-                        <a href="https://dci-copel.vercel.app" target="_blank" class="app-link">
-                            Acessar
-                            <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </a>
-                    </div>
-                </div>
+            <div class="app-grid">
 
                 <!-- Parecer I20 -->
-                <div class="app-card" data-keywords="i20 parecer final aprovação ss120 vercel">
+                <div class="app-card" data-keywords="i20 parecer final aprovação ss120 vercel interno">
                     <div>
                         <div class="app-header">
-                            <span class="app-tag tag-pilot">Gerador Técnico</span>
+                            <span class="app-tag tag-internal">Uso Interno</span>
                         </div>
                         <h3 class="app-title">Gerador de Parecer Final I20</h3>
                         <p class="app-desc">Emissão rápida de pareceres técnicos finais para aprovação e troca de padrão da SS I20.</p>
@@ -432,10 +400,10 @@
                 </div>
 
                 <!-- Impedâncias -->
-                <div class="app-card" data-keywords="impedancias parecer indeferimento reprovação protocolo vercel">
+                <div class="app-card" data-keywords="impedancias parecer indeferimento reprovação protocolo vercel interno">
                     <div>
                         <div class="app-header">
-                            <span class="app-tag tag-pilot">Gerador Técnico</span>
+                            <span class="app-tag tag-internal">Uso Interno</span>
                         </div>
                         <h3 class="app-title">Gerador de Parecer — Impedâncias</h3>
                         <p class="app-desc">Análise de status do protocolo e geração automatizada de motivos de indeferimento técnico.</p>
@@ -449,91 +417,19 @@
                     </div>
                 </div>
 
-                <!-- Demanda Projetos -->
-                <div class="app-card" data-keywords="demanda projetos calculo carga estimativa projetistas vercel">
-                    <div>
-                        <div class="app-header">
-                            <span class="app-tag tag-pilot">Ferramenta Técnica</span>
-                        </div>
-                        <h3 class="app-title">Calculadora de Demanda (Projetistas)</h3>
-                        <p class="app-desc">Ferramenta para Projetistas fazerem cálculo e estimativa da demanda de energia elétrica em novos projetos.</p>
-                    </div>
-                    <div class="app-footer">
-                        <span class="app-url">demandaprojetos.vercel.app</span>
-                        <a href="https://demandaprojetos.vercel.app" target="_blank" class="app-link">
-                            Acessar
-                            <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </a>
-                    </div>
-                </div>
-
             </div>
         </div>
 
-        <!-- Categoria 2: Links e Normas Oficiais COPEL -->
+        <!-- Categoria 2: Recursos e Sistemas Oficiais -->
         <div class="category-group">
             <div class="category-header">
                 <div class="category-accent"></div>
                 <h2 class="category-title">Recursos e Sistemas Oficiais</h2>
             </div>
-            <div class="app-grid" id="officialGrid">
-
-                <!-- Normas Copel -->
-                <div class="app-card" data-keywords="normas ntc padroes tecnicos copel">
-                    <div>
-                        <div class="app-header">
-                            <span class="app-tag tag-official">Oficial COPEL</span>
-                        </div>
-                        <h3 class="app-title">Normas Técnicas (NTC)</h3>
-                        <p class="app-desc">Acesso direto ao acervo de normas e especificações técnicas de fornecimento e medição.</p>
-                    </div>
-                    <div class="app-footer">
-                        <span class="app-url">copel.com/normas</span>
-                        <a href="https://www.copel.com/normas" target="_blank" class="app-link">
-                            Acessar
-                            <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Formulários Copel -->
-                <div class="app-card" data-keywords="formularios documentos requerimentos copel">
-                    <div>
-                        <div class="app-header">
-                            <span class="app-tag tag-official">Oficial COPEL</span>
-                        </div>
-                        <h3 class="app-title">Formulários e Documentos</h3>
-                        <p class="app-desc">Repositório corporativo de formulários padrão para análise e entrada de solicitações.</p>
-                    </div>
-                    <div class="app-footer">
-                        <span class="app-url">copel.com/formularios</span>
-                        <a href="https://www.copel.com/formularios" target="_blank" class="app-link">
-                            Acessar
-                            <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Homologação de Materiais -->
-                <div class="app-card" data-keywords="homologacao materiais equipamentos padronizacao copel">
-                    <div>
-                        <div class="app-header">
-                            <span class="app-tag tag-official">Oficial COPEL</span>
-                        </div>
-                        <h3 class="app-title">Homologação de Materiais</h3>
-                        <p class="app-desc">Consulta de materiais, equipamentos e fabricantes homologados e padronizados.</p>
-                    </div>
-                    <div class="app-footer">
-                        <span class="app-url">copel.com/homologacao</span>
-                        <a href="https://www.copel.com/homologacao" target="_blank" class="app-link">
-                            Acessar
-                            <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </a>
-                    </div>
-                </div>
+            <div class="app-grid">
 
                 <!-- Sistema PEW Web -->
-                <div class="app-card" data-keywords="pew web projetos sistema consulta copel">
+                <div class="app-card" data-keywords="pew web projetos sistema consulta copel oficial">
                     <div>
                         <div class="app-header">
                             <span class="app-tag tag-official">Oficial COPEL</span>
@@ -550,6 +446,161 @@
                     </div>
                 </div>
 
+                <!-- Normas Copel -->
+                <div class="app-card" data-keywords="normas ntc padroes tecnicos copel oficial">
+                    <div>
+                        <div class="app-header">
+                            <span class="app-tag tag-official">Oficial COPEL</span>
+                        </div>
+                        <h3 class="app-title">Normas Técnicas (NTC)</h3>
+                        <p class="app-desc">Acesso direto ao acervo de normas e especificações técnicas de fornecimento e medição.</p>
+                    </div>
+                    <div class="app-footer">
+                        <span class="app-url">copel.com/normas</span>
+                        <a href="https://www.copel.com/normas" target="_blank" class="app-link">
+                            Acessar
+                            <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Homologação de Materiais -->
+                <div class="app-card" data-keywords="homologacao materiais equipamentos padronizacao copel oficial">
+                    <div>
+                        <div class="app-header">
+                            <span class="app-tag tag-official">Oficial COPEL</span>
+                        </div>
+                        <h3 class="app-title">Homologação de Materiais</h3>
+                        <p class="app-desc">Consulta de materiais, equipamentos e fabricantes homologados e padronizados.</p>
+                    </div>
+                    <div class="app-footer">
+                        <span class="app-url">copel.com/homologacao</span>
+                        <a href="https://www.copel.com/homologacao" target="_blank" class="app-link">
+                            Acessar
+                            <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Formulários Copel -->
+                <div class="app-card" data-keywords="formularios documentos requerimentos copel oficial">
+                    <div>
+                        <div class="app-header">
+                            <span class="app-tag tag-official">Oficial COPEL</span>
+                        </div>
+                        <h3 class="app-title">Formulários e Documentos</h3>
+                        <p class="app-desc">Repositório corporativo de formulários padrão para análise e entrada de solicitações.</p>
+                    </div>
+                    <div class="app-footer">
+                        <span class="app-url">copel.com/formularios</span>
+                        <a href="https://www.copel.com/formularios" target="_blank" class="app-link">
+                            Acessar
+                            <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Consulta de ART - CREA-PR -->
+                <div class="app-card" data-keywords="crea crea-pr art anotacao responsabilidade tecnica consulta">
+                    <div>
+                        <div class="app-header">
+                            <span class="app-tag tag-official">Externo / Órgão</span>
+                        </div>
+                        <h3 class="app-title">Consulta de ART (CREA-PR)</h3>
+                        <p class="app-desc">Consulta pública de Anotação de Responsabilidade Técnica junto ao CREA-PR.</p>
+                    </div>
+                    <div class="app-footer">
+                        <span class="app-url">servicos.crea-pr.org.br</span>
+                        <a href="https://servicos.crea-pr.org.br/publico/art" target="_blank" class="app-link">
+                            Acessar
+                            <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Categoria 3: Ferramentas Piloto de Uso Externo -->
+        <div class="category-group">
+            <div class="category-header">
+                <div class="category-accent"></div>
+                <h2 class="category-title">Pilotos de Uso Externo</h2>
+            </div>
+            <div class="app-grid">
+
+                <!-- Queda de Tensão -->
+                <div class="app-card" data-keywords="queda tensão memorial cálculo dimensionamento condutores vercel piloto externo">
+                    <div>
+                        <div class="app-header">
+                            <span class="app-tag tag-external">Piloto Externo</span>
+                        </div>
+                        <h3 class="app-title">Cálculo de Queda de Tensão</h3>
+                        <p class="app-desc">Cálculo de queda de tensão por trecho e memorial de cálculo completo para barramentos e cabos.</p>
+                    </div>
+                    <div class="app-footer">
+                        <span class="app-url">quedadetensao.vercel.app</span>
+                        <a href="https://quedadetensao.vercel.app" target="_blank" class="app-link">
+                            Acessar
+                            <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Detalhamento de Carga Instalada (DCI) -->
+                <div class="app-card" data-keywords="dci detalhamento carga instalada ficha motores potencia equipamentos vercel piloto externo">
+                    <div>
+                        <div class="app-header">
+                            <span class="app-tag tag-external">Piloto Externo</span>
+                        </div>
+                        <h3 class="app-title">Detalhamento de Carga Instalada (DCI)</h3>
+                        <p class="app-desc">Preenchimento do formulário de DCI e ficha técnica de características para motores acima de 75 CV.</p>
+                    </div>
+                    <div class="app-footer">
+                        <span class="app-url">dci-copel.vercel.app</span>
+                        <a href="https://dci-copel.vercel.app" target="_blank" class="app-link">
+                            Acessar
+                            <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Demanda Projetos -->
+                <div class="app-card" data-keywords="demanda projetos calculo carga estimativa projetistas vercel piloto externo">
+                    <div>
+                        <div class="app-header">
+                            <span class="app-tag tag-external">Piloto Externo</span>
+                        </div>
+                        <h3 class="app-title">Calculadora de Demanda (Projetistas)</h3>
+                        <p class="app-desc">Ferramenta para Projetistas fazerem cálculo e estimativa da demanda de energia elétrica em novos projetos.</p>
+                    </div>
+                    <div class="app-footer">
+                        <span class="app-url">demandaprojetos.vercel.app</span>
+                        <a href="https://demandaprojetos.vercel.app" target="_blank" class="app-link">
+                            Acessar
+                            <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Simulador de Enquadramento Tarifário -->
+                <div class="app-card" data-keywords="simulador tarifa enquadramento tarifario grupo a grupo b mercado livre vercel piloto externo">
+                    <div>
+                        <div class="app-header">
+                            <span class="app-tag tag-external">Piloto Externo</span>
+                        </div>
+                        <h3 class="app-title">Simulador de Enquadramento Tarifário</h3>
+                        <p class="app-desc">Simulação de consumo e apoio na escolha tarifária entre Grupo A, Grupo B e Mercado Livre (ACL).</p>
+                    </div>
+                    <div class="app-footer">
+                        <span class="app-url">tarifacopel.vercel.app</span>
+                        <a href="https://tarifacopel.vercel.app" target="_blank" class="app-link">
+                            Acessar
+                            <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </main>
@@ -559,7 +610,7 @@
         <p>COPEL — Análise de Projetos da Medição | Central Interna de Ferramentas</p>
     </footer>
 
-    <!-- Script de Busca Simplificado -->
+    <!-- Script de Busca -->
     <script>
         function filterApps() {
             const input = document.getElementById('searchInput').value.toLowerCase();
