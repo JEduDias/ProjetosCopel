@@ -1,0 +1,60 @@
+{
+  "rewrites": [
+    {
+      "source": "/seletividade",
+      "destination": "https://seletividade.vercel.app"
+    },
+    {
+      "source": "/seletividade/:path*",
+      "destination": "https://seletividade.vercel.app/:path*"
+    },
+    {
+      "source": "/i20copel",
+      "destination": "https://i20copel.vercel.app"
+    },
+    {
+      "source": "/i20copel/:path*",
+      "destination": "https://i20copel.vercel.app/:path*"
+    },
+    {
+      "source": "/quedadetensao",
+      "destination": "https://quedadetensao.vercel.app"
+    },
+    {
+      "source": "/quedadetensao/:path*",
+      "destination": "https://quedadetensao.vercel.app/:path*"
+    },
+    {
+      "source": "/tarifacopel",
+      "destination": "https://tarifacopel.vercel.app"
+    },
+    {
+      "source": "/tarifacopel/:path*",
+      "destination": "https://tarifacopel.vercel.app/:path*"
+    },
+    {
+      "source": "/impedancias",
+      "destination": "https://impedancias.vercel.app"
+    },
+    {
+      "source": "/impedancias/:path*",
+      "destination": "https://impedancias.vercel.app/:path*"
+    },
+    {
+      "source": "/demandaprojetos",
+      "destination": "https://demandaprojetos.vercel.app"
+    },
+    {
+      "source": "/demandaprojetos/:path*",
+      "destination": "https://demandaprojetos.vercel.app/:path*"
+    },
+    {
+      "source": "/dci-copel",
+      "destination": "https://dci-copel.vercel.app"
+    },
+    {
+      "source": "/dci-copel/:path*",
+      "destination": "https://dci-copel.vercel.app/:path*"
+    }
+  ]
+}

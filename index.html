@@ -3,28 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COPEL — Central de Sistemas e Ferramentas</title>
-
-    <!-- ÍCONE DA ABA E BARRA DE FAVORITOS (SVG EMBUTIDO - RAIO LARANJA) -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FF6B00'><path d='M11 15H6l7-14v8h5l-7 14v-8z'/></svg>">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <title>Central de Aplicações & Ferramentas | COPEL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --copel-orange: #FF6B00;
             --copel-orange-dark: #E05D00;
-            --copel-orange-light: #FFF0E6;
+            --copel-orange-light: #FFF3E8;
             --bg-gray: #F4F6F8;
             --card-bg: #FFFFFF;
             --text-main: #2C3E50;
             --text-muted: #6C7A89;
-            --border-color: #E2E8F0;
-            --badge-bg: rgba(255, 255, 255, 0.2);
+            --border-color: #E1E8ED;
             --shadow-sm: 0 2px 4px rgba(0,0,0,0.04);
-            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
-            --shadow-hover: 0 8px 24px rgba(255, 107, 0, 0.15);
+            --shadow-md: 0 6px 16px rgba(0,0,0,0.08);
         }
 
         * {
@@ -34,20 +26,21 @@
         }
 
         body {
-            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background-color: var(--bg-gray);
             color: var(--text-main);
+            line-height: 1.5;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
         }
 
-        /* Top Header Navigation */
+        /* Cabeçalho Padrão COPEL */
         header {
             background-color: var(--copel-orange);
             color: white;
             padding: 0 2rem;
-            height: 60px;
+            height: 70px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -60,92 +53,86 @@
         .header-brand {
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 14px;
         }
 
         .header-logo {
-            height: 34px;
+            height: 44px;
             width: auto;
-            object-fit: contain;
             display: block;
-        }
-
-        .header-divider {
-            width: 1px;
-            height: 22px;
-            background-color: rgba(255, 255, 255, 0.4);
+            object-fit: contain;
         }
 
         .header-title {
-            font-size: 1.05rem;
-            font-weight: 600;
+            font-size: 1.2rem;
+            font-weight: 700;
             letter-spacing: 0.3px;
         }
 
-        .header-badge {
-            background: var(--badge-bg);
-            padding: 5px 14px;
+        .badge-area {
+            background: rgba(255, 255, 255, 0.2);
+            color: #FFFFFF;
+            padding: 6px 14px;
             border-radius: 20px;
-            font-size: 0.72rem;
+            font-size: 11px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.8px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            letter-spacing: 0.5px;
         }
 
-        /* Main Container */
+        /* Container Principal */
         main {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 1.25rem 1.5rem;
-            width: 100%;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
             flex: 1;
-        }
-
-        /* Top Bar: Title + Search (Inline Layout) */
-        .top-action-bar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .welcome-section h1 {
-            font-size: 1.4rem;
-            color: #1A252C;
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        .welcome-section p {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            margin-top: 2px;
-        }
-
-        /* Search Bar (Right Aligned) */
-        .search-container {
-            position: relative;
-            width: 320px;
-            flex-shrink: 0;
-        }
-
-        .search-input {
             width: 100%;
-            padding: 8px 14px 8px 36px;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            font-size: 0.88rem;
-            background-color: white;
-            transition: all 0.2s;
-            box-shadow: var(--shadow-sm);
         }
 
-        .search-input:focus {
+        /* Seção de Busca e Boas-vindas */
+        .hero-section {
+            background: var(--card-bg);
+            padding: 1.5rem 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .hero-text h1 {
+            font-size: 1.35rem;
+            color: var(--text-main);
+            margin-bottom: 0.25rem;
+        }
+
+        .hero-text p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .search-box {
+            position: relative;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 10px 14px 10px 38px;
+            border: 1px solid #CBD5E1;
+            border-radius: 6px;
+            font-size: 0.9rem;
             outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            font-family: inherit;
+        }
+
+        .search-box input:focus {
             border-color: var(--copel-orange);
             box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.15);
         }
@@ -156,53 +143,56 @@
             top: 50%;
             transform: translateY(-50%);
             color: var(--text-muted);
-            font-size: 0.95rem;
+            width: 16px;
+            height: 16px;
         }
 
-        /* Section Styling */
+        /* Títulos de Categoria */
         .category-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2.5rem;
         }
 
         .category-header {
             display: flex;
             align-items: center;
-            gap: 8px;
-            margin-bottom: 0.85rem;
+            gap: 10px;
+            margin-bottom: 1.2rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
         }
 
         .category-accent {
-            width: 4px;
-            height: 16px;
+            width: 5px;
+            height: 22px;
             background-color: var(--copel-orange);
-            border-radius: 2px;
+            border-radius: 3px;
         }
 
         .category-title {
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             font-weight: 700;
-            color: #1E293B;
+            color: var(--text-main);
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        /* Applications Grid */
+        /* Grid de Cards */
         .app-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1rem;
+            gap: 1.25rem;
         }
 
         .app-card {
             background: var(--card-bg);
-            border-radius: 8px;
             border: 1px solid var(--border-color);
-            padding: 1rem 1.15rem;
+            border-radius: 8px;
+            padding: 1.4rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: all 0.2s ease;
             box-shadow: var(--shadow-sm);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
             position: relative;
             overflow: hidden;
         }
@@ -212,74 +202,78 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 3px;
-            background: transparent;
-            transition: background 0.2s;
+            width: 4px;
+            height: 100%;
+            background-color: var(--copel-orange);
+            opacity: 0;
+            transition: opacity 0.2s ease;
         }
 
         .app-card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-hover);
-            border-color: rgba(255, 107, 0, 0.3);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+            border-color: #CBD5E1;
         }
 
         .app-card:hover::before {
-            background: var(--copel-orange);
+            opacity: 1;
         }
 
         .app-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.8rem;
         }
 
         .app-tag {
-            font-size: 0.65rem;
+            font-size: 10px;
             font-weight: 700;
-            padding: 2px 6px;
+            padding: 3px 8px;
             border-radius: 4px;
             text-transform: uppercase;
-            letter-spacing: 0.4px;
         }
 
-        .tag-internal {
-            background-color: #E0F2FE;
-            color: #0369A1;
+        .tag-pilot {
+            background-color: var(--copel-orange-light);
+            color: var(--copel-orange-dark);
         }
 
         .tag-official {
-            background-color: #FEF3C7;
-            color: #B45309;
-        }
-
-        .tag-external {
-            background-color: #DCFCE7;
-            color: #15803D;
+            background-color: #E2E8F0;
+            color: #475569;
         }
 
         .app-title {
-            font-size: 1rem;
+            font-size: 1.05rem;
             font-weight: 700;
-            color: #0F172A;
-            margin-bottom: 0.35rem;
-            line-height: 1.25;
+            color: var(--text-main);
+            margin-bottom: 0.4rem;
         }
 
         .app-desc {
-            font-size: 0.82rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
-            line-height: 1.4;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
+            flex-grow: 1;
         }
 
         .app-footer {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            padding-top: 0.65rem;
+            align-items: center;
             border-top: 1px solid #F1F5F9;
+            padding-top: 0.9rem;
+        }
+
+        .app-url {
+            font-size: 0.75rem;
+            color: #94A3B8;
+            font-family: monospace;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 175px;
         }
 
         .app-link {
@@ -288,115 +282,102 @@
             gap: 6px;
             background-color: var(--copel-orange);
             color: white;
-            padding: 6px 12px;
-            border-radius: 5px;
             text-decoration: none;
+            padding: 7px 14px;
+            border-radius: 5px;
+            font-size: 0.85rem;
             font-weight: 600;
-            font-size: 0.8rem;
-            transition: background 0.2s;
+            transition: background-color 0.2s;
+            flex-shrink: 0;
         }
 
         .app-link:hover {
             background-color: var(--copel-orange-dark);
         }
 
-        .app-url {
-            font-size: 0.72rem;
-            color: #94A3B8;
-            font-family: monospace;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            max-width: 150px;
-        }
-
         .icon-arrow {
-            width: 12px;
-            height: 12px;
+            width: 14px;
+            height: 14px;
             fill: currentColor;
         }
 
-        /* Footer */
+        /* Rodapé */
         footer {
-            background-color: white;
-            border-top: 1px solid var(--border-color);
-            padding: 1rem 2rem;
             text-align: center;
-            font-size: 0.8rem;
+            padding: 1.5rem;
             color: var(--text-muted);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--border-color);
+            background: white;
             margin-top: auto;
         }
 
-        @media (max-width: 768px) {
+        /* Responsividade */
+        @media (max-width: 650px) {
             header {
                 padding: 0 1rem;
             }
-            .header-badge {
+            .header-title {
+                font-size: 1rem;
+            }
+            .badge-area {
                 display: none;
             }
-            .top-action-bar {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
-            }
-            .search-container {
-                width: 100%;
-            }
-            main {
-                padding: 1rem;
-            }
-            .app-grid {
-                grid-template-columns: 1fr;
+            .hero-section {
+                padding: 1.25rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header / Navbar estilo COPEL -->
+    <!-- Cabeçalho -->
     <header>
         <div class="header-brand">
             <img src="./logo.png" alt="COPEL" class="header-logo">
-            <div class="header-divider"></div>
-            <div class="header-title">Central de Aplicações & Ferramentas</div>
+            <div style="width: 1px; height: 24px; background: rgba(255,255,255,0.4);"></div>
+            <span class="header-title">Central de Ferramentas</span>
         </div>
-        <div class="header-badge">Análise de Projetos da Medição</div>
+        <span class="badge-area">Análise de Projetos da Medição</span>
     </header>
 
     <!-- Conteúdo Principal -->
     <main>
-        <!-- Barra Superior Unificada (Título + Busca) -->
-        <div class="top-action-bar">
-            <div class="welcome-section">
-                <h1>Painel de Acesso Rápido</h1>
-                <p>Selecione a ferramenta, gerador de parecer ou recurso oficial que deseja utilizar.</p>
+        <!-- Barra de Pesquisa e Saudação -->
+        <section class="hero-section">
+            <div class="hero-text">
+                <h1>Acesso Rápido às Aplicações</h1>
+                <p>Selecione uma ferramenta de análise técnica ou acesse os portais normativos da COPEL.</p>
             </div>
-            <div class="search-container">
-                <span class="search-icon">🔍</span>
-                <input type="text" id="searchInput" class="search-input" placeholder="Buscar ferramenta, norma ou gerador..." onkeyup="filterApps()">
+            <div class="search-box">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" id="searchInput" placeholder="Buscar ferramenta ou norma..." onkeyup="filterApps()">
             </div>
-        </div>
+        </section>
 
-        <!-- Categoria 1: Sistemas da Análise de Projetos (Uso Interno) -->
+        <!-- Categoria 1: Sistemas da Análise de Projetos -->
         <div class="category-group">
             <div class="category-header">
                 <div class="category-accent"></div>
                 <h2 class="category-title">Sistemas da Análise de Projetos</h2>
             </div>
-            <div class="app-grid">
-
+            <div class="app-grid" id="pilotGrid">
+                
                 <!-- Parecer I20 -->
-                <div class="app-card" data-keywords="i20 parecer final aprovação ss120 vercel interno">
+                <div class="app-card" data-keywords="i20 parecer final aprovação ss120 i57 vercel">
                     <div>
                         <div class="app-header">
-                            <span class="app-tag tag-internal">Uso Interno</span>
+                            <span class="app-tag tag-pilot">Gerador Técnico</span>
                         </div>
                         <h3 class="app-title">Gerador de Parecer Final I20</h3>
-                        <p class="app-desc">Emissão rápida de pareceres técnicos finais para aprovação e troca de padrão da SS I20.</p>
+                        <p class="app-desc">Emissão rápida de pareceres técnicos finais para aprovação, geração de I57 e carta do PEW.</p>
                     </div>
                     <div class="app-footer">
-                        <span class="app-url">i20copel.vercel.app</span>
-                        <a href="https://i20copel.vercel.app" target="_blank" class="app-link">
+                        <span class="app-url">projetoscopel.vercel.app/i20</span>
+                        <a href="https://projetoscopel.vercel.app/i20" target="_blank" class="app-link">
                             Acessar
                             <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </a>
@@ -404,17 +385,17 @@
                 </div>
 
                 <!-- Impedâncias -->
-                <div class="app-card" data-keywords="impedancias parecer indeferimento reprovação protocolo vercel interno">
+                <div class="app-card" data-keywords="impedancias parecer indeferimento reprovação protocolo curto circuito vercel">
                     <div>
                         <div class="app-header">
-                            <span class="app-tag tag-internal">Uso Interno</span>
+                            <span class="app-tag tag-pilot">Gerador Técnico</span>
                         </div>
                         <h3 class="app-title">Gerador de Parecer — Impedâncias</h3>
                         <p class="app-desc">Análise de status do protocolo e geração automatizada de motivos de indeferimento técnico.</p>
                     </div>
                     <div class="app-footer">
-                        <span class="app-url">impedancias.vercel.app</span>
-                        <a href="https://impedancias.vercel.app" target="_blank" class="app-link">
+                        <span class="app-url">projetoscopel.vercel.app/impedancias</span>
+                        <a href="https://projetoscopel.vercel.app/impedancias" target="_blank" class="app-link">
                             Acessar
                             <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </a>
@@ -422,71 +403,17 @@
                 </div>
 
                 <!-- Coordenação e Seletividade -->
-                <div class="app-card" data-keywords="seletividade coordenacao curto circuito rede protecao vercel interno">
+                <div class="app-card" data-keywords="coordenacao seletividade protecao rele coordenograma tcc elo fusivel religador vercel">
                     <div>
                         <div class="app-header">
-                            <span class="app-tag tag-internal">Uso Interno</span>
+                            <span class="app-tag tag-pilot">Ferramenta Técnica</span>
                         </div>
                         <h3 class="app-title">Coordenação e Seletividade</h3>
-                        <p class="app-desc">Módulo de cálculo de curto-circuito, parâmetros de rede e verificação de seletividade.</p>
+                        <p class="app-desc">Análise de estudos de proteção, validação de ajustes de relés (50/51), elos fusíveis e coordenograma TCC.</p>
                     </div>
                     <div class="app-footer">
-                        <span class="app-url">seletividade.vercel.app</span>
-                        <a href="https://seletividade.vercel.app" target="_blank" class="app-link">
-                            Acessar
-                            <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Cabines Homologadas -->
-                <div class="app-card" data-keywords="cabines homologadas sharepoint pasta modelos copel interno">
-                    <div>
-                        <div class="app-header">
-                            <span class="app-tag tag-internal">Uso Interno</span>
-                        </div>
-                        <h3 class="app-title">Cabines Homologadas</h3>
-                        <p class="app-desc">Repositório Sharepoint contendo os projetos e documentações de cabines homologadas.</p>
-                    </div>
-                    <div class="app-footer">
-                        <span class="app-url">sharepoint.com/.../Cabines</span>
-                        <a href="https://copel0.sharepoint.com/:f:/r/sites/analisedeprojetos/Shared%20Documents/Cabines%20Homologadas?d=wd797cdd67b9c42beabc19f5a4da668a1&csf=1&web=1&e=TwRZ88" target="_blank" class="app-link">
-                            Acessar
-                            <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Solicitação de Projetos Antigos ao Arquivo -->
-                <div class="app-card" data-keywords="solicitacao projetos antigos arquivo freshservice chamado catalogo copel interno">
-                    <div>
-                        <div class="app-header">
-                            <span class="app-tag tag-internal">Uso Interno</span>
-                        </div>
-                        <h3 class="app-title">Solicitação de Projetos Antigos</h3>
-                        <p class="app-desc">Abertura de chamados via Freshservice para requisição e busca de projetos antigos no arquivo.</p>
-                    </div>
-                    <div class="app-footer">
-                        <span class="app-url">freshservice.com/item/444</span>
-                        <a href="https://copel.freshservice.com/support/catalog/items/444" target="_blank" class="app-link">
-                            Acessar
-                            <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Acervo de Projetos Antigos (IRM) -->
-                <div class="app-card" data-keywords="arquivo projetos antigos consulta acervo irm insight copel interno">
-                    <div>
-                        <div class="app-header">
-                            <span class="app-tag tag-internal">Uso Interno</span>
-                        </div>
-                        <h3 class="app-title">Arquivo de Projetos Antigos</h3>
-                        <p class="app-desc">Plataforma IRM Insight para pesquisa e visualização direta de projetos digitalizados do acervo.</p>
-                    </div>
-                    <div class="app-footer">
-                        <span class="app-url">irm47-insight-br.com</span>
-                        <a href="https://copel.irm47-insight-br.com/csp/ui/?provider=IRMGoogleOpenIDConnect&forceAnonymousLogin=true&state=jeik3beg1qmtcd6rufdkkj1ml3&iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AXlqoi53jv_wJskb0LByeTrAxb4sqMlgh9Ye3GCLDaQx9yDDEtRb6aS0UZqfUPilXRH4kA&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&hd=copel.com&prompt=none#!/home" target="_blank" class="app-link">
+                        <span class="app-url">projetoscopel.vercel.app/seletividade</span>
+                        <a href="https://projetoscopel.vercel.app/seletividade" target="_blank" class="app-link">
                             Acessar
                             <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </a>
@@ -502,16 +429,70 @@
                 <div class="category-accent"></div>
                 <h2 class="category-title">Recursos e Sistemas Oficiais</h2>
             </div>
-            <div class="app-grid">
+            <div class="app-grid" id="officialGrid">
+                
+                <!-- Cabines Homologadas -->
+                <div class="app-card" data-keywords="cabines homologadas primarias subestacoes equipamentos sharepoint copel">
+                    <div>
+                        <div class="app-header">
+                            <span class="app-tag tag-official">Oficial COPEL</span>
+                        </div>
+                        <h3 class="app-title">Cabines Homologadas</h3>
+                        <p class="app-desc">Consulta à relação atualizada de cabines primárias e conjuntos de medição homologados.</p>
+                    </div>
+                    <div class="app-footer">
+                        <span class="app-url">copel.sharepoint.com</span>
+                        <a href="https://copel.sharepoint.com/:x:/r/sites/AprovacaodeProjetoseVistorias-DPAO/_layouts/15/Doc.aspx?sourcedoc=%7B160587A7-552C-404A-8364-FB0E36D7E5DE%7D&file=Cabines%20Homologadas%20-%20Lista.xlsx&action=default&mobileredirect=true&DefaultItemOpen=1&login_hint=g0203234%40copel.com&ct=1774616476161&wdOrigin=OFFICECOM-WEB.MAIN.REC&cid=01eb1533-d51b-4382-8bf2-a791447dc555&wdPreviousSessionSrc=HarmonyWeb&wdPreviousSession=c10e864f-e38f-4449-90eb-6f0f025343f7" target="_blank" class="app-link">
+                            Acessar
+                            <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Solicitação de Projetos Antigos -->
+                <div class="app-card" data-keywords="solicitacao projetos antigos acervo consulta historico freshservice copel">
+                    <div>
+                        <div class="app-header">
+                            <span class="app-tag tag-official">Oficial COPEL</span>
+                        </div>
+                        <h3 class="app-title">Solicitação de Projetos Antigos</h3>
+                        <p class="app-desc">Abertura de chamado no portal Freshservice para requisição de acervo histórico de projetos.</p>
+                    </div>
+                    <div class="app-footer">
+                        <span class="app-url">copel.freshservice.com</span>
+                        <a href="https://copel.freshservice.com/support/catalog/items/444" target="_blank" class="app-link">
+                            Acessar
+                            <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Arquivo de Projetos Antigos -->
+                <div class="app-card" data-keywords="arquivo projetos antigos irm insight digitalizacao acervo consulta copel">
+                    <div>
+                        <div class="app-header">
+                            <span class="app-tag tag-official">Oficial COPEL</span>
+                        </div>
+                        <h3 class="app-title">Arquivo de Projetos Antigos</h3>
+                        <p class="app-desc">Acesso direto ao repositório digital IRM Insight para busca e visualização de projetos antigos.</p>
+                    </div>
+                    <div class="app-footer">
+                        <span class="app-url">irm47-insight-br.com</span>
+                        <a href="https://copel.irm47-insight-br.com/Login/auth-callback?code=F20C10E3BF767F4526962BB7B95D58E66368EC640A1CD6C636FDE8B0885B8E1A&scope=openid%20profile%20email%20offline_access&state=f3de905975dc4b1c803fe365a4dd0cb1&session_state=367D560EC113E7C9BB397A8F27BE27DFEBAD8680B30DB767EBD41889E1595096.269DF3A89C4E12C18B4DB1B0E5ED3892&iss=https%3A%2F%2Fcopel.irm47-insight-br.com%2Fauth" target="_blank" class="app-link">
+                            Acessar
+                            <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
+                </div>
 
                 <!-- WebGeo -->
-                <div class="app-card" data-keywords="webgeo geo sistema informacoes geograficas intranet mapa copel oficial">
+                <div class="app-card" data-keywords="webgeo georreferenciamento mapa rede alimentador poste transformador copel">
                     <div>
                         <div class="app-header">
                             <span class="app-tag tag-official">Oficial COPEL</span>
                         </div>
                         <h3 class="app-title">WebGeo</h3>
-                        <p class="app-desc">Sistema corporativo de informações geográficas na intranet para consulta de redes e ativos.</p>
+                        <p class="app-desc">Sistema de informações geográficas para consulta de rede, postes, alimentadores e transformadores.</p>
                     </div>
                     <div class="app-footer">
                         <span class="app-url">geosom1prd:8443/wgo</span>
@@ -522,18 +503,18 @@
                     </div>
                 </div>
 
-                <!-- Quadro de Avisos (Localidades com Restrição) -->
-                <div class="app-card" data-keywords="quadro avisos localidades restricao sharepoint wikicis copel oficial">
+                <!-- Quadro de Avisos -->
+                <div class="app-card" data-keywords="quadro avisos localidades restricao wikicis comunicados copel">
                     <div>
                         <div class="app-header">
                             <span class="app-tag tag-official">Oficial COPEL</span>
                         </div>
                         <h3 class="app-title">Quadro de Avisos</h3>
-                        <p class="app-desc">Consulta oficial das localidades com restrição no sistema elétrico no SharePoint WikiCIS.</p>
+                        <p class="app-desc">Informativos técnicos, comunicados internos e relação de localidades com restrição.</p>
                     </div>
                     <div class="app-footer">
-                        <span class="app-url">sharepoint.com/.../Localidades</span>
-                        <a href="https://copel0.sharepoint.com/sites/Wikicis/SitePages/Localidades-com-restri%C3%A7%C3%A3o.aspx?isSPOFile=1&xsdata=MDV8MDJ8fDYzYzI1MTgxOWFjMDQwNDNjM2IzMDhkZjI1NGE1ZTA1fDliNjAxNThlZDQ1NTRlODBhYTdjMTdjZDlmZmNlNmJhfDB8MHw2MzkyNzA2NzM0NDUxNDM0NzV8VW5rbm93bnxWR1ZoYlhOVFpXTjFjbWwwZVZObGNuWnBZMlY4ZXlKRFFTSTZJbFJsWVcxelgwRlVVRk5sY25acFkyVmZVMUJQVEU5R0lpd2lWaUk2SWpBdU1DNHdNREF3SWl3aVVDSTZJbGRwYmpNeUlpd2lRVTRpT2lKUGRHaGxjaUlzSWxkVUlqb3hNWDA9fDF8TDJOb1lYUnpMekU1T21GaU56Qm1aVEkwTFRnek0yRXROR1JsT1MxaE56RmxMV1ZtWmpBek1UVmhNekUxWlY5aU5qTTNORGhpWmkwTU9UUXlMVFE1N2R0T0RBNFlpTTVTURjR1I2WTJZM1ltSkFkV154TG1kaWJDNXpjR0ZqWlhNdmJXVnpjMkZuWlhMdk1UYzVNVEUzTURVMExUYzVNUT09fDExODY2YjQwMDc1YjQ0Y2MzOWNkMDg4ZjI1NGE1ZTA1fDY1NTFiNTFiY2E2ZDRmY2ViMDRmZGY0NmFmZjM0NWIz&sdata=dWg5RUpzcnBqQ1Rhb2lOUFZVUEhkbUlvZXVjR2xLcGpia0pjNUx4VisvQT0%3D&ovuser=9b60158e-d455-4e80-aa7c-17cd9ffce6ba%2Cjose.dias%40copel.com&TeamsCID=5c49fcab-443c-43db-9ef0-229d70ab993e&OR=Teams-HL&CT=1791470547470&clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiI0OS8yNjA5MTcxMjIxMyJ9&linkOpenTime=1791470547479" target="_blank" class="app-link">
+                        <span class="app-url">copel.sharepoint.com</span>
+                        <a href="https://copel.sharepoint.com/sites/WikiCIS/SitePages/Localidades-com-restri%C3%A7%C3%A3o.aspx?xsdata=MDV8MDJ8fDc1YzYxOGI5NTI0ODRhMWJlODljMDhlODViMDEyZDJmfGNiNDg1NGQ0NGEwZTQyM2FiNjAyNDRiNDBlYmE4ZDBlfDB8MHw2MzkwOTk2NjcxMTY4MjY1Njh8VW5rbm93bnxUV0ZwYkdac2IzZDhleUpXSWpvaU1DNHdMakF3TURBaUxDSlFJam9pVjJsdU16SWlMQ0pCVGlJNklrMWhhVzRpTENKWFCTSTZJbFlpZlE9PXwwfHx8&sdata=cG1uTmR6ME4rMGZ5U0hGOUh5dTBFd09rS3J3R3o5NWwvMXF3c09sU0k1dz0%3D&ovuser=cb4854d4-4a0e-423a-b602-44b40eba8d0e%2Cg0203234%40copel.com&OR=Teams-HL&CT=1774616628981&clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiI0OS8yNjAzMDEyMDcwOCIsIkhhc0ZlZGVyYXRlZFVzZXIiOmZhbHNlfQ%3D%3D" target="_blank" class="app-link">
                             Acessar
                             <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </a>
@@ -541,7 +522,7 @@
                 </div>
 
                 <!-- Sistema PEW Web -->
-                <div class="app-card" data-keywords="pew web projetos sistema consulta copel oficial">
+                <div class="app-card" data-keywords="pew web projetos sistema consulta copel">
                     <div>
                         <div class="app-header">
                             <span class="app-tag tag-official">Oficial COPEL</span>
@@ -559,7 +540,7 @@
                 </div>
 
                 <!-- Normas Copel -->
-                <div class="app-card" data-keywords="normas ntc padroes tecnicos copel oficial">
+                <div class="app-card" data-keywords="normas ntc padroes tecnicos copel">
                     <div>
                         <div class="app-header">
                             <span class="app-tag tag-official">Oficial COPEL</span>
@@ -577,7 +558,7 @@
                 </div>
 
                 <!-- Homologação de Materiais -->
-                <div class="app-card" data-keywords="homologacao materiais equipamentos padronizacao copel oficial">
+                <div class="app-card" data-keywords="homologacao materiais equipamentos padronizacao copel">
                     <div>
                         <div class="app-header">
                             <span class="app-tag tag-official">Oficial COPEL</span>
@@ -595,7 +576,7 @@
                 </div>
 
                 <!-- Formulários Copel -->
-                <div class="app-card" data-keywords="formularios documentos requerimentos copel oficial">
+                <div class="app-card" data-keywords="formularios documentos requerimentos copel">
                     <div>
                         <div class="app-header">
                             <span class="app-tag tag-official">Oficial COPEL</span>
@@ -613,13 +594,13 @@
                 </div>
 
                 <!-- Consulta de ART - CREA-PR -->
-                <div class="app-card" data-keywords="crea crea-pr art anotacao responsabilidade tecnica consulta">
+                <div class="app-card" data-keywords="art crea pr responsabilidade tecnica consulta engenheiro">
                     <div>
                         <div class="app-header">
-                            <span class="app-tag tag-official">Externo / Órgão</span>
+                            <span class="app-tag tag-official">Portal Externo</span>
                         </div>
                         <h3 class="app-title">Consulta de ART (CREA-PR)</h3>
-                        <p class="app-desc">Consulta pública de Anotação de Responsabilidade Técnica junto ao CREA-PR.</p>
+                        <p class="app-desc">Verificação pública e validação de Anotações de Responsabilidade Técnica no sistema do CREA-PR.</p>
                     </div>
                     <div class="app-footer">
                         <span class="app-url">servicos.crea-pr.org.br</span>
@@ -633,44 +614,44 @@
             </div>
         </div>
 
-        <!-- Categoria 3: Ferramentas Piloto de Uso Externo -->
+        <!-- Categoria 3: Ferramentas de Apoio ao Projetista -->
         <div class="category-group">
             <div class="category-header">
                 <div class="category-accent"></div>
-                <h2 class="category-title">Pilotos de Uso Externo</h2>
+                <h2 class="category-title">Ferramentas de Apoio ao Projetista</h2>
             </div>
-            <div class="app-grid">
+            <div class="app-grid" id="designerGrid">
 
                 <!-- Queda de Tensão -->
-                <div class="app-card" data-keywords="queda tensão memorial cálculo dimensionamento condutores vercel piloto externo">
+                <div class="app-card" data-keywords="queda tensão memorial cálculo dimensionamento condutores projetista vercel">
                     <div>
                         <div class="app-header">
-                            <span class="app-tag tag-external">Piloto Externo</span>
+                            <span class="app-tag tag-pilot">Ferramenta Técnica</span>
                         </div>
                         <h3 class="app-title">Cálculo de Queda de Tensão</h3>
                         <p class="app-desc">Cálculo de queda de tensão por trecho e memorial de cálculo completo para barramentos e cabos.</p>
                     </div>
                     <div class="app-footer">
-                        <span class="app-url">quedadetensao.vercel.app</span>
-                        <a href="https://quedadetensao.vercel.app" target="_blank" class="app-link">
+                        <span class="app-url">projetoscopel.vercel.app/quedadetensao</span>
+                        <a href="https://projetoscopel.vercel.app/quedadetensao" target="_blank" class="app-link">
                             Acessar
                             <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </a>
                     </div>
                 </div>
 
-                <!-- Detalhamento de Carga Instalada (DCI) -->
-                <div class="app-card" data-keywords="dci detalhamento carga instalada ficha motores potencia equipamentos vercel piloto externo">
+                <!-- DCI e Ficha de Motores -->
+                <div class="app-card" data-keywords="dci carga instalada ficha motores 75cv memorial projetista vercel">
                     <div>
                         <div class="app-header">
-                            <span class="app-tag tag-external">Piloto Externo</span>
+                            <span class="app-tag tag-pilot">Formulário Técnico</span>
                         </div>
                         <h3 class="app-title">Detalhamento de Carga Instalada (DCI)</h3>
-                        <p class="app-desc">Preenchimento do formulário de DCI e ficha técnica de características para motores acima de 75 CV.</p>
+                        <p class="app-desc">Preenchimento de DCI e geração automática da Ficha de Características de Motores ≥ 75 CV.</p>
                     </div>
                     <div class="app-footer">
-                        <span class="app-url">dci-copel.vercel.app</span>
-                        <a href="https://dci-copel.vercel.app" target="_blank" class="app-link">
+                        <span class="app-url">projetoscopel.vercel.app/dci</span>
+                        <a href="https://projetoscopel.vercel.app/dci" target="_blank" class="app-link">
                             Acessar
                             <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </a>
@@ -678,17 +659,17 @@
                 </div>
 
                 <!-- Demanda Projetos -->
-                <div class="app-card" data-keywords="demanda projetos calculo carga estimativa projetistas vercel piloto externo">
+                <div class="app-card" data-keywords="demanda projetos calculo carga estimativa projetistas vercel">
                     <div>
                         <div class="app-header">
-                            <span class="app-tag tag-external">Piloto Externo</span>
+                            <span class="app-tag tag-pilot">Ferramenta Técnica</span>
                         </div>
                         <h3 class="app-title">Calculadora de Demanda (Projetistas)</h3>
-                        <p class="app-desc">Ferramenta para Projetistas fazerem cálculo e estimativa da demanda de energia elétrica em novos projetos.</p>
+                        <p class="app-desc">Ferramenta para projetistas fazerem cálculo e estimativa da demanda de energia elétrica em novos projetos.</p>
                     </div>
                     <div class="app-footer">
-                        <span class="app-url">demandaprojetos.vercel.app</span>
-                        <a href="https://demandaprojetos.vercel.app" target="_blank" class="app-link">
+                        <span class="app-url">projetoscopel.vercel.app/demandaprojetos</span>
+                        <a href="https://projetoscopel.vercel.app/demandaprojetos" target="_blank" class="app-link">
                             Acessar
                             <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </a>
@@ -696,17 +677,17 @@
                 </div>
 
                 <!-- Simulador de Enquadramento Tarifário -->
-                <div class="app-card" data-keywords="simulador tarifa enquadramento tarifario grupo a grupo b mercado livre vercel piloto externo">
+                <div class="app-card" data-keywords="simulador enquadramento tarifario tarifa grupo a grupo b verde azul mercado livre vercel">
                     <div>
                         <div class="app-header">
-                            <span class="app-tag tag-external">Piloto Externo</span>
+                            <span class="app-tag tag-pilot">Simulador Técnico</span>
                         </div>
                         <h3 class="app-title">Simulador de Enquadramento Tarifário</h3>
-                        <p class="app-desc">Simulação de consumo e apoio na escolha tarifária entre Grupo A, Grupo B e Mercado Livre (ACL).</p>
+                        <p class="app-desc">Análise comparativa de consumo e demanda para apoio na escolha entre Grupo B, Grupo A (Verde/Azul) e Mercado Livre.</p>
                     </div>
                     <div class="app-footer">
-                        <span class="app-url">tarifacopel.vercel.app</span>
-                        <a href="https://tarifacopel.vercel.app" target="_blank" class="app-link">
+                        <span class="app-url">projetoscopel.vercel.app/tarifa</span>
+                        <a href="https://projetoscopel.vercel.app/tarifa" target="_blank" class="app-link">
                             Acessar
                             <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </a>
@@ -722,17 +703,17 @@
         <p>COPEL — Análise de Projetos da Medição | Central Interna de Ferramentas</p>
     </footer>
 
-    <!-- Script de Busca -->
+    <!-- Script de Busca Simplificado -->
     <script>
         function filterApps() {
             const input = document.getElementById('searchInput').value.toLowerCase();
             const cards = document.querySelectorAll('.app-card');
-
+            
             cards.forEach(card => {
                 const keywords = card.getAttribute('data-keywords') || '';
                 const title = card.querySelector('.app-title').textContent.toLowerCase();
                 const desc = card.querySelector('.app-desc').textContent.toLowerCase();
-
+                
                 if (title.includes(input) || desc.includes(input) || keywords.includes(input)) {
                     card.style.display = 'flex';
                 } else {
@@ -741,6 +722,7 @@
             });
         }
     </script>
+
     <!-- Vercel Web Analytics Script -->
     <script defer src="/_vercel/insights/script.js"></script>
 </body>
