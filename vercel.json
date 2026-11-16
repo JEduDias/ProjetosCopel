@@ -9,6 +9,14 @@
       "destination": "https://seletividade.vercel.app/:path*"
     },
     {
+      "source": "/i57",
+      "destination": "https://i20copel.vercel.app"
+    },
+    {
+      "source": "/i57/:path*",
+      "destination": "https://i20copel.vercel.app/:path*"
+    },
+    {
       "source": "/i20copel",
       "destination": "https://i20copel.vercel.app"
     },
